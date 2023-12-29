@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:menuprincipal="clr-namespace:Biblioteca.Vistas.MenuPrincipal"
+             xmlns:vistamodelo="clr-namespace:Biblioteca.VistaModelo"
+             x:Class="Biblioteca.Vistas.MenuPrincipal.Master"
+             Title="Master"
+             NavigationPage.HasNavigationBar="True">
+    <Grid RowDefinitions="200,100,100,100,*">
+        <Image Source="biblioteca1"
+               VerticalOptions="Start"
+               Aspect="AspectFill"
+               WidthRequest="250"
+               HeightRequest="300"
+               TranslationY="-15"
+               Grid.Row="0" />
+        <Grid Grid.Row="1">
+            <StackLayout>
+                <Image Source="mantenimiento1"
+                       Grid.Column="0"
+                       Aspect="AspectFit"
+                       WidthRequest="50"
+                       VerticalOptions="Start"
+                       HorizontalOptions="Start" />
+                <Label Text="Mantenimiento"
+                       Grid.Column="1"
+                       FontSize="Medium"
+                       VerticalOptions="Start"
+                       HorizontalOptions="Center"
+                       TranslationY="-50" />
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding NavegacionMantenimientocommand}" />
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+        </Grid>
+        <Grid Grid.Row="2">
+            <StackLayout>
+                <Image Source="reporte"
+                       Grid.Column="0"
+                       Aspect="AspectFit"
+                       WidthRequest="50"
+                       VerticalOptions="Start"
+                       HorizontalOptions="Start" />
+                <Label Text="Reporte"
+                       Grid.Column="1"
+                       FontSize="Medium"
+                       VerticalOptions="Start"
+                       HorizontalOptions="Center"
+                       TranslationY="-50" />
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding Navegacionreportecommand}" />
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+        </Grid>
+        <Grid Grid.Row="3"
+              RowSpacing="10">
+            <StackLayout>
+                <Image Source="idea"
+                       Grid.Column="0"
+                       Aspect="AspectFit"
+                       WidthRequest="50"
+                       VerticalOptions="Start"
+                       HorizontalOptions="Start" />
+                <Label Text="Creador"
+                       Grid.Column="1"
+                       FontSize="Medium"
+                       VerticalOptions="Start"
+                       HorizontalOptions="Center"
+                       TranslationY="-50" />
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding Navegacioncreadocommand}" />
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>

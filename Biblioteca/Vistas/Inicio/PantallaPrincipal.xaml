@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             x:Class="Biblioteca.Vistas.Inicio.PantallaPrincipal"
+             Title="Welcome library RD">
+    <StackLayout Background="#C0D5E8">
+        <Label Text="Biblioteca RD"
+               HorizontalTextAlignment="Center"
+               FontSize="30"
+               FontAttributes="Bold"
+               TextColor="#000"
+               Margin="30" />
+        <Frame BorderColor="#000"
+               CornerRadius="5">
+            <forms:AnimationView x:Name="number1"
+                                 Grid.Row="0"
+                                 Animation="inicio1.json"
+                                 RepeatCount="3"
+                                 AutoPlay="True"
+                                 RepeatMode="Infinite"
+                                 VerticalOptions="Center"
+                                 HeightRequest="200"
+                                 WidthRequest="150"
+                                 HorizontalOptions="FillAndExpand"
+                                 Margin="10" />
+        </Frame>
+        <forms:AnimationView x:Name="number2"
+                             Grid.Row="1"
+                             Animation="inicio2.json"
+                             RepeatMode="Infinite"
+                             AutoPlay="True"
+                             RepeatCount="3"
+                             HeightRequest="150"
+                             Margin="40" />
+        <Button Text="Iniciar"
+                Command="{Binding NavegarLogincommand}"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="Start"
+                HeightRequest="50"
+                WidthRequest="300"
+                CornerRadius="50"
+                FontSize="Medium"
+                FontAttributes="italic"
+                TextTransform="None"
+                BackgroundColor="#000"
+                TextColor="#fff" />
+    </StackLayout>
+  </ContentPage>

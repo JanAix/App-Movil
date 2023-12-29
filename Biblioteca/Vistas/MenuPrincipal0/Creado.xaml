@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Biblioteca.Vistas.MenuPrincipal0.Creado"
+             BackgroundColor="#DBDCF1"> 
+    <ContentPage.Content >
+        <AbsoluteLayout HorizontalOptions="Center"
+                        >
+            <Grid>
+                <Grid RowDefinitions="100"
+                  Grid.Row="0">
+                    <StackLayout Grid.Row="0"
+                                 Spacing="100">
+                        <Label Text="CREADOR"
+                               FontSize="Title"
+                               FontAttributes="Italic"
+                               TextDecorations="Underline"
+                               TextColor="#000"
+                               HorizontalOptions="CenterAndExpand" />
+                    </StackLayout>
+                </Grid>
+                
+                
+            <StackLayout Grid.Row="1"
+                       HorizontalOptions="Center" >
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer x:Name="Jan"
+                                          Tapped="Jan_Tapped_1" />
+                </StackLayout.GestureRecognizers>
+                <Frame HorizontalOptions="Center"
+                       HeightRequest="25"
+                       HasShadow="True"
+                       BorderColor="#000"
+                       CornerRadius="50"
+                       BackgroundColor="AliceBlue">
+                    <Label Text="Jan Carlos Alix"
+                           FontSize="Medium"
+                           HorizontalOptions="Center"
+                           FontAttributes="Bold"></Label>
+                </Frame>
+            </StackLayout>
+        
+            <ContentView x:Name="popupJanAlix"
+                         AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                         AbsoluteLayout.LayoutFlags="All"
+                         IsVisible="False"
+                         Padding="5,0">
+                <Frame Margin="10"
+                       Padding="10"
+                       BackgroundColor="#f26"
+                       VerticalOptions="FillAndExpand"
+                       HorizontalOptions="FillAndExpand">
+                    <StackLayout>
+                        <Image Source="Jan.jpg"
+                               Aspect="AspectFit"
+                               WidthRequest="250"
+                               HeightRequest="250" />
+                        <Label LineBreakMode="WordWrap"
+                               HorizontalTextAlignment="Center"
+                               TextTransform="Uppercase"
+                               FontAttributes="Italic">Jan Carlos Alexander Alix Frias
+                                   21-SIST-1-034</Label>
+                        <Button HorizontalOptions="FillAndExpand"
+                                BackgroundColor="#000"
+                                Opacity="1"
+                                TextColor="White"
+                                x:Name="btnCerrarModal"
+                                Clicked="btnCerrarModal_Clicked"
+                                Text="Aceptar"></Button>
+                    </StackLayout>
+               </Frame>
+            </ContentView>
+          
+                
+                
+                
+            
+             </Grid>     
+       </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

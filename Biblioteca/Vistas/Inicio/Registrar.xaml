@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Biblioteca.Vistas.Inicio.Registrar">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Grid BackgroundColor="#C0D5E8"
+              RowDefinitions="90,600"
+              RowSpacing="25"
+              Padding="25">
+                <Grid Grid.Column="0">
+                    <Label Text="Nuevo usuario" FontSize="Large"
+                           TranslationX="80"
+                           TranslationY="-30"/>
+                    <Image  Source="nuevo.png"
+                               HeightRequest="70"
+                               WidthRequest="100"
+                                TranslationX="-40"
+                            TranslationY="10"/>
+                    
+                </Grid>
+                <Grid Grid.Column="0"
+                      TranslationX="45"
+                      TranslationY="10">
+                    <Image  Source="miembro.png" 
+                               HeightRequest="70"
+                               WidthRequest="100"  />
+                 </Grid>
+                    
+               
+                
+                
+                <Grid Grid.Row="1" RowSpacing="100">
+                    <StackLayout Padding="25" Spacing="20">
+                    <Entry Placeholder="Email"
+                           x:Name="txtemail"
+                           Keyboard="Email"></Entry>
+                    <Entry Placeholder="Contraseña"
+                           x:Name="txtclave"
+                           IsPassword="True"></Entry>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="auto" />
+                        </Grid.ColumnDefinitions>
+                        <Grid RowSpacing="25">
+                            <CheckBox x:Name="chkAceptaTerminos"
+                                      Grid.Row="3"
+                                      Grid.Column="0"
+                                      Color="#000"
+                                      VerticalOptions="Center"></CheckBox>
+                            <Label Grid.Row="3"
+                                   Grid.Column="1"
+                                   VerticalOptions="Center">Acepto los</Label>
+                            <Label Grid.Row="3"
+                                   Grid.Column="2"
+                                   TextColor="red"
+                                   TextDecorations="Underline"
+                                   VerticalOptions="Center">términos y condiciones
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer x:Name="TapLabelTerminosCondiciones"
+                                                          Tapped="TapLabelTerminosCondiciones_Tapped" />
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </Grid>
+                    </Grid>
+                    <Button x:Name="btnRegistrar"
+                            Text="Registrarme"
+                            BackgroundColor="#000"
+                            TextColor="White"
+                            Clicked="btnRegistrar_Clicked" />
+                </StackLayout>
+                </Grid>
+            </Grid>
+        
+        <ContentView x:Name="popupTerminosCondiciones"
+                     BackgroundColor="#C0808080"
+                     Padding="10, 0"
+                     IsVisible="false"
+                     AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                     AbsoluteLayout.LayoutFlags="All">
+            <Frame Margin="10"
+                   Padding="10"
+                   BackgroundColor="#ffffff"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="FillAndExpand">
+                
+                <StackLayout>
+                    <Label LineBreakMode="WordWrap" FontAttributes="Italic" FontSize="Small"> Este documento es utilizado para regular las condiciones y reglas a las que se someten tanto los usuarios de un sitio web como su propietario y/o administrador, en lo referente al acceso y utilización del sitio web. De igual manera, hace referencia a las políticas de privacidad, protección de datos personales, enlaces, etc., que se tomarán para proteger la privacidad de los usuarios.
+
+Dichas reglas y principios aportan un mayor nivel de confianza y seguridad jurídica a los usuarios del sitio web así como a sus propietarios y/o administradores, puesto que también se establece el tipo de personas a las que va dirigido y las responsabilidades que estos adquieren al hacer uso del sitio o de los servicios que en él son ofrecidos.</Label>
+                    <Button HorizontalOptions="FillAndExpand"
+                            BackgroundColor="#000"
+                            Opacity="1"
+                            TextColor="White"
+                            x:Name="btnCerrarModal"
+                            Clicked="btnCerrarModal_Clicked"
+                            Text="Aceptar"></Button>
+                    
+                </StackLayout>
+            </Frame>
+            
+        </ContentView>
+        
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

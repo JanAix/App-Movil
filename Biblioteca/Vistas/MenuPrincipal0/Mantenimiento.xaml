@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Biblioteca.Vistas.MenuPrincipal0.Matenimiento"
+             Title="Mantenimiento"
+             NavigationPage.HasBackButton="False">
+    <Grid RowDefinitions="300,150,150">
+        
+        <Image Source="biblioteca1" 
+               VerticalOptions="Start"
+               Aspect="AspectFill"
+               TranslationY="-15"
+               Grid.Row="0"
+               />
+        
+        <Grid Grid.Row="1" RowDefinitions="100">
+            <Frame HeightRequest="50"
+                   WidthRequest="50"
+                   CornerRadius="50"
+                   BorderColor="#000"
+                   BackgroundColor="#E9FBFA">
+                <StackLayout>
+                <Image Source="humano.png"
+                       Grid.Column="0"
+                       Aspect="AspectFit"
+                       WidthRequest="50"
+                       VerticalOptions="Start"
+                       HorizontalOptions="Start" />
+                <Label Text="Socios"
+                       Grid.Column="1"
+                       FontSize="Medium"
+                       VerticalOptions="Start"
+                       HorizontalOptions="Center"
+                       TranslationY="-50" />
+                <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding Tablasocioscommand}"/>
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+            </Frame>
+        </Grid>
+        
+        
+        <Grid Grid.Row="2" RowDefinitions="100">
+            <Frame CornerRadius="50"
+                   BorderColor="#000"
+                   BackgroundColor="#E9FBFA">
+                <StackLayout>
+                <Image Source="iman_libro.png"
+                       Grid.Column="0"
+                       Aspect="AspectFit"
+                       WidthRequest="50"
+                       VerticalOptions="Start"
+                       HorizontalOptions="Start" />
+                <Label Text="Libros"
+                       Grid.Column="1"
+                       FontSize="Medium"
+                       VerticalOptions="Start"
+                       HorizontalOptions="Center"
+                       TranslationY="-50" />
+                <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer  Command="{Binding Tablaliboscommand }"/>
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+            </Frame>
+        </Grid>
+        <Button Text="Ir a Menu Principal"
+                TextColor="#f00"
+                BackgroundColor="#000"
+                HeightRequest="100"
+                WidthRequest="300"
+                BorderColor="#F00" CornerRadius="10"
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="EndAndExpand"
+                Command="{Binding VolverPrincipalcommand}"
+                Grid.Row="3"/>
+    </Grid>
+    
+</ContentPage>

@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vistamodelo="clr-namespace:Biblioteca.VistaModelo"
+             x:DataType="vistamodelo:AgregarLibroVM"
+             x:Class="Biblioteca.Vistas.Tablas.ModificarLibro"
+             Title="Modificacion">
+    <Grid RowDefinitions="150,200,*,90,40"
+          BackgroundColor="#2DC3D5">
+        <StackLayout>
+            <Image Source="biblioteca1.png"
+                   HeightRequest="250"
+                   Aspect="AspectFit"
+                   WidthRequest="100"
+                   VerticalOptions="StartAndExpand"
+                   TranslationY="-20" />
+        </StackLayout>
+        <StackLayout Margin="10"
+                     Grid.Row="2">
+            <StackLayout Orientation="Horizontal">
+                <Label Text="ID:"
+                       TextColor="#FFFFFF"
+                       FontSize="Medium"
+                       FontAttributes="Bold"
+                       VerticalOptions="Center" />
+                <Label Text="{Binding txtidlibro}"
+                       FontSize="15"
+                       TextColor="#FFFFFF"
+                       WidthRequest="40"
+                       HorizontalOptions="Center"
+                       BackgroundColor="{Binding ColorFondoId}" />
+            </StackLayout>
+            <StackLayout  Orientation="Horizontal">
+                <Label Text="Libro:"
+                       TextColor="#FFFFFF"
+                       FontSize="Medium"
+                       FontAttributes="Bold"
+                       VerticalOptions="Center" />
+                <Entry Text="{Binding txtlibro}"
+                       FontSize="18"
+                       TextColor="#000"
+                       WidthRequest="200"
+                        />
+            </StackLayout>
+            <StackLayout HeightRequest="40">
+                <Label Text="Estatus"
+                       TextColor="#FFFFFF"
+                       HorizontalOptions="Start"
+                       WidthRequest="200"
+                       FontSize="Medium"
+                       FontAttributes="Bold"
+                       VerticalOptions="CenterAndExpand" />
+                </StackLayout>
+            
+            <StackLayout>
+               
+                <CheckBox Color="#F00"
+                          WidthRequest="280"
+                          VerticalOptions="End"
+                          HorizontalOptions="Start"
+                          IsChecked="{Binding ChkEstadoValidar}" />
+            </StackLayout>
+            
+        </StackLayout>
+        <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="Start"
+                     Margin="20,0,5,10"
+                     Grid.Row="3">
+            <Grid RowDefinitions="*"
+                  ColumnDefinitions="100,120,*">
+                <Button Grid.Row="0"
+                        Grid.Column="0"
+                        Text="Crear"
+                        FontSize="Small"
+                        HorizontalOptions="CenterAndExpand"
+                        TextTransform="None"
+                        CornerRadius="5"
+                        BackgroundColor="#006EC2"
+                        FontAttributes="Bold"
+                        VerticalOptions="EndAndExpand"
+                        IsEnabled="{Binding  IsEnebledCrear}"
+                        Command="{Binding CrearCommand}" />
+                <Button Grid.Row="0"
+                        Grid.Column="1"
+                        Text="Modificar"
+                        FontSize="Small"
+                        HorizontalOptions="Start"
+                        CornerRadius="15"
+                        BackgroundColor="#3AB44A"
+                        FontAttributes="Bold"
+                        VerticalOptions="EndAndExpand"
+                        TextTransform="None"
+                        Command="{Binding  GuardarCambiosCommand }" />
+                <Button Grid.Row="0"
+                        Grid.Column="2"
+                        Text="Borrar"
+                        HorizontalOptions="End"
+                        TextTransform="None"
+                        FontSize="Small"
+                        CornerRadius="15"
+                        BackgroundColor="#F00"
+                        FontAttributes="Bold"
+                        VerticalOptions="EndAndExpand"
+                        Command="{Binding BorrarCommand }" />
+            </Grid>
+        </StackLayout>
+    </Grid>
+</ContentPage>

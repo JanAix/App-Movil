@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Biblioteca.Vistas.Tablas.Socios"
+             Title="Listas de socios">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Agregar"
+                     Order="Primary"
+                     Command="{Binding NavegarAgregarcommand}"></ToolbarItem>
+        <ToolbarItem
+            Text="Refrescar"
+            Order="Secondary"
+                     Command="{Binding RefrescarCommand }">
+            
+            
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#FD7668">
+            <StackLayout Grid.Row="0"
+                         WidthRequest="450"
+                         HeightRequest="20"
+                         HorizontalOptions="Center"
+                         Margin="0,30,0,30">
+                <Frame Padding="0,4,0,10"
+                       HasShadow="True"
+                       CornerRadius="15"
+                       BorderColor="#000"
+                       BackgroundColor="#EEEEF0"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center">
+                    <SearchBar Placeholder="Buscar"
+                               Keyboard="Chat"
+                               TextChanged="SearchBar_TextChanged"
+                               MaxLength="30"
+                               FontSize="15"
+                               HeightRequest="30"></SearchBar>
+                </Frame>
+            </StackLayout>
+            <Frame Grid.Row="2"
+                   CornerRadius="5"
+                   Margin="15,0,15,0"
+                   HasShadow="False"
+                   BorderColor="#000"
+                   IsClippedToBounds="True"
+                   BackgroundColor="white"
+                   Opacity="0.5">
+                <!-- ItemSelected=
+            seleccionar new event Handler
+            -->
+                <StackLayout>
+                    <ListView BackgroundColor="Transparent"
+                              x:Name="ListViewSocios"
+                              ItemSelected="ListViewSocios_ItemSelected"
+                              ItemsSource="{Binding Listasocio}">
+                        <ListView.GroupHeaderTemplate>
+                            <DataTemplate>
+                                <ViewCell Height="30">
+                                    <StackLayout VerticalOptions="FillAndExpand"
+                                                 Padding="5"
+                                                 BackgroundColor="#00DBFF">
+                                        <Label  Text="{Binding Key}"
+                                                TextColor="red"
+                                                VerticalOptions="Center"
+                                                HeightRequest="25"></Label>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.GroupHeaderTemplate>
+                        <!-- MUESTRA LOS ITEMS DE LAS TABLAS DE FIREBASE
+                    -->
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="1*" />
+                                            <ColumnDefinition Width="2*" />
+                                            <ColumnDefinition Width="auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Column="0"
+                                               FontAttributes="Italic"
+                                               HorizontalTextAlignment="Center"
+                                               VerticalTextAlignment="Center"
+                                               Text="{Binding ID_socio}"
+                                               FontSize="15"
+                                               TextColor="#F00" />
+                                        <Label Grid.Column="1"
+                                               TextColor="#000"
+                                               Text="{Binding Nombre}"
+                                               FontSize="15"
+                                               FontAttributes="Bold"
+                                               VerticalOptions="Center"
+                                               HorizontalTextAlignment="Center" />
+                                        <Label Grid.Column="3"
+                                               TextColor="#0F2"
+                                               Text="{Binding Estatus}"
+                                               FontSize="12"
+                                               VerticalTextAlignment="Center"
+                                               HorizontalTextAlignment="Center" />
+                                       
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+        </ContentPage.Content>
+</ContentPage>

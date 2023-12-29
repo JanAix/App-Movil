@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vistamodelo="clr-namespace:Biblioteca.VistaModelo"
+             xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             x:DataType="vistamodelo:LoginVM"
+             x:Class="Biblioteca.Vistas.Inicio.Login">
+   
+    <Grid BackgroundColor="#C0D5E8"
+          RowDefinitions="150,*"
+          RowSpacing="25"
+          Padding="25">
+        
+      
+            <StackLayout>
+            <Label Text="Member login"
+                   FontSize="30"
+                   TextColor="#fff"
+                   FontAttributes="Bold"
+                   TextTransform="Uppercase"
+                   HorizontalTextAlignment="Center"/>
+            <forms:AnimationView x:Name="acceso"
+                                     Grid.Row="0"
+                                     Animation="acceder.json"
+                                     HeightRequest="100"
+                                     HorizontalOptions="Center"
+                                     WidthRequest="200"
+                                     AutoPlay="true"
+                                     RepeatMode="Infinite" />
+            </StackLayout>
+        <Grid Grid.Row="1" RowDefinitions="120">
+            
+            <Image Source="llave.png"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   HeightRequest="150"
+                   BackgroundColor="Transparent"
+                   WidthRequest="150"
+                   Margin="5"/>
+           
+        </Grid>
+        
+        <StackLayout Grid.Row="2">
+            <Entry Placeholder="Username"
+                   Keyboard="Email"
+                   x:Name="txtemail"
+                   Text="{Binding txtemail}"
+                   ClearButtonVisibility="WhileEditing"
+                   PlaceholderColor="#000" BackgroundColor="#fff" 
+                   HorizontalTextAlignment="Center"
+                   TextTransform="None"
+                   FontAttributes="Italic" />
+            
+            <Entry Placeholder="Password"
+                   IsPassword="True"
+                   x:Name="txtclave"
+                   Text="{Binding txtclave}"
+                   ClearButtonVisibility="WhileEditing"
+                   PlaceholderColor="#000"
+                   BackgroundColor="#fff"
+                   HorizontalTextAlignment="Center"
+                   TextTransform="None" 
+                   
+                   FontAttributes="Italic"/>
+        </StackLayout>
+        <Button Text="Iniciar sesion"
+                Command="{Binding Accesocommand}"
+                TextColor="white"
+                BackgroundColor="gray"
+                BorderWidth="1"
+                BorderColor="white"
+                VerticalOptions="EndAndExpand"
+                 Grid.Row="3"/>
+        <Label Grid.Row="4"
+                       HorizontalOptions="Center">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="No tienes una cuenta?   "
+                                  TextColor="white" />
+                            <Span Text="Registrate!"
+                                  TextColor="black"
+                                  FontAttributes="Bold"
+                                  TextDecorations="Underline" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                    <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+            </Label.GestureRecognizers>
+                </Label> 
+          
+    </Grid>
+
+</ContentPage>

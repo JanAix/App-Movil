@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             x:Class="Biblioteca.Vistas.MenuPrincipal.Detail"
+             Title="Menu Principal"
+             NavigationPage.HasNavigationBar="True">
+    <ScrollView>
+       
+        <Grid Grid.Row="0">
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="2,0"
+                                     EndPoint="0,0">
+                    <GradientStop Color="#72C4FF"
+                                  Offset="0.0" />
+                    <GradientStop Color="#fff"
+                                  Offset="1.0" />
+                </LinearGradientBrush>
+            </Grid.Background>
+            <StackLayout Grid.Row="0">
+                <Label Text="Biblioteca RD"
+                       FontSize="40"
+                       TextColor="#000"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       />
+                <Frame CornerRadius="60"
+                       HeightRequest="210"
+                       BorderColor="#fff"
+                       HasShadow="True"
+                       BackgroundColor="#000"
+                       Padding="0">
+                    <Image Source="library.png"
+                           HeightRequest="200"
+                           Background="#000" />
+                </Frame>
+            </StackLayout>
+            
+            
+                 <forms:AnimationView x:Name="Hacia"
+                      Grid.Row="0"
+                      Animation="abajo.json"
+                      RepeatCount="3"
+                      AutoPlay="True"
+                      RepeatMode="Infinite"
+                      VerticalOptions="Center"
+                      HeightRequest="300"
+                      WidthRequest="50"
+                      HorizontalOptions="FillAndExpand"
+                      Margin="100" 
+                          TranslationY="100"/>
+            
+            <Grid Grid.Row="1" >
+                <Image Source="libro1.png" HeightRequest="200" Grid.Row="0" Grid.Column="0" />
+                <Image Source="libro2.png" HeightRequest="200" Grid.Row="0" Grid.Column="1" />  
+                <Image Source="libro3.png" HeightRequest="200" Grid.Row="0" Grid.Column="2" />
+                <Image Source="libro4.png"  HeightRequest="200" Grid.Row="1" Grid.Column="0" />
+                <Image Source="libro5.png" HeightRequest="200" Grid.Row="1" Grid.Column="1" />
+                <Image Source="libro6.png" HeightRequest="200"  Grid.Row="1"  Grid.Column="2" />
+                <Image Source="libro7.png" HeightRequest="200"  Grid.Row="2" Grid.Column="0" />
+                <Image Source="libro8.png" HeightRequest="200"  Grid.Row="2" Grid.Column="1" />
+                <Image Source="libro9.png" HeightRequest="200" Grid.Row="2" Grid.Column="2" />
+                <Image Source="libro10.png" HeightRequest="200" Grid.Row="3" Grid.Column="0" />
+                <Image Source="libro11.png" HeightRequest="200" Grid.Row="3" Grid.Column="1" />
+                <Image Source="libro12.png"
+                       HeightRequest="200"
+                       Grid.Row="3"
+                       Grid.Column="2" />
+               
+               
+            </Grid>
+            
+            
+            <Grid Grid.Row="2" RowSpacing="10">
+                <StackLayout Grid.Row="0"  VerticalOptions="End" TranslationY="250">
+                    <ImageButton Source="telefono.png" Aspect="AspectFit" BackgroundColor="Transparent"  HeightRequest="50" Grid.Column="0" Grid.Row="0"/>
+                    <Label Text="829-371-9977"
+                           FontSize="Medium"
+                           TextColor="#f00" Grid.Row="0" Grid.Column="1" HorizontalOptions="Center" />
+                </StackLayout> 
+                
+               
+                <StackLayout Grid.Row="1"
+                             VerticalOptions="End">
+                    <Label Text="AV.Duarte no.225/ Los Alcarrizos"
+                           FontSize="Medium"
+                           TextColor="#f00"
+                           Grid.Row="0"
+                           Grid.Column="1" HorizontalOptions="Center" />
+                    <Image Source="ubicacion" Aspect="AspectFit"  HeightRequest="70" Grid.Row="1" Grid.Column="0" />
+                    
+                    <Label  Grid.Row="4"
+                            TextColor="#f00"
+                            FontSize="25"
+                            VerticalOptions="End"
+                            HorizontalOptions="CenterAndExpand"
+                            FontAttributes="Bold"
+                            HorizontalTextAlignment="Center"
+                            x:Name="txtusuariologueado" />
+                </StackLayout>
+            </Grid>
+                     
+                     
+            
+        </Grid>
+       
+    </ScrollView>
+    
+</ContentPage>
